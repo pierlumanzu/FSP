@@ -9,13 +9,21 @@
 
 Implementation of the FSP framework proposed in 
 
-[Jia, X., Lapucci, M. & Mansueto, P., Projection-based curve pattern search for black-box optimization over smooth convex sets. arXiv pre-print (2025)]
+[Jia, X., Lapucci, M. & Mansueto, P., Projection-based curve pattern search for black-box optimization over smooth convex sets. arXiv pre-print (2025)](https://doi.org/10.48550/arXiv.2503.20616)
 
 If you have used our code for research purposes, please cite the publication mentioned above.
 For the sake of simplicity, we provide the Bibtex format:
 
 ```
-TODO
+@misc{jia2025projectionbasedcurvepatternsearch,
+      title={Projection-based curve pattern search for black-box optimization over smooth convex sets}, 
+      author={Xiaoxi Jia and Matteo Lapucci and Pierluigi Mansueto},
+      year={2025},
+      eprint={2503.20616},
+      archivePrefix={arXiv},
+      primaryClass={math.OC},
+      url={https://arxiv.org/abs/2503.20616}, 
+}
 ```
 
 ### Main Dependencies Installation
