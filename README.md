@@ -45,7 +45,7 @@ Given a terminal (Anaconda Prompt for Windows users), you can run the code using
 
 ### Contact
 
-If you have any question, feel free to contact us:
+If you have any question, feel free to contact me:
 
 [Pierluigi Mansueto](https://webgol.dinfo.unifi.it/pierluigi-mansueto/)<br>
 Global Optimization Laboratory ([GOL](https://webgol.dinfo.unifi.it/))<br>

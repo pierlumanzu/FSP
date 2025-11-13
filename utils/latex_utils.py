@@ -42,7 +42,7 @@ def create_table(results: dict) :
     body = ""
     for p in problems:
         
-        body += space + p + "& "
+        body += space + p.replace('_', '\_') + "& "
         v = []
         
         for s in solvers:

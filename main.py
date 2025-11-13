@@ -5,7 +5,7 @@ import os
 from warnings import warn
 
 from utils.latex_utils import create_table
-from config import MAX_IT, MAX_NF, VERBOSITY, MIN_ALPHA, OUTPUT_PATH, SOLVERS, PROBLEMS
+from config import MAX_IT, MAX_NF, VERBOSITY, MIN_ALPHA, DIRECTION_MODE, OUTPUT_PATH, SOLVERS, PROBLEMS
 
 
 os.makedirs(OUTPUT_PATH, exist_ok=True)
@@ -18,8 +18,11 @@ if os.path.exists(os.path.join(OUTPUT_PATH, 'benchmark_results.pkl')):
         results = pickle.load(f)
 
 else:
+
+    assert DIRECTION_MODE in ['Standard', 'Parallel']
+
     results = {'max_it': MAX_IT, 'max_nf': MAX_NF, 
-               'verbosity': VERBOSITY, 'min_alpha': MIN_ALPHA,
+               'verbosity': VERBOSITY, 'min_alpha': MIN_ALPHA, 'direction_mode': DIRECTION_MODE,
                'solvers': dict()}
 
     for idx_s, s in enumerate(SOLVERS):
@@ -37,16 +40,16 @@ else:
             x_bar, _ = prob.proj_op(np.copy(x_bar))
 
             results['solvers'][str(s)][prob.name] = {'x_0': x0, 'f_x0': prob.f(x0),
-                                                             'f_x': np.array([prob.f(x) for x in history.iterates['x']]),
-                                                             'x_bar': x_bar, 'f_xbar': prob.f(x_bar),
-                                                             'viol_0': np.linalg.norm(np.maximum(prob.g(x0), 0)),
-                                                             'viol_x': np.array([np.linalg.norm(np.maximum(prob.g(x), 0)) for x in history.iterates['x']]),
-                                                             'viol_xbar': np.linalg.norm(np.maximum(prob.g(x_bar), 0)),
-                                                             'n_it': len(history.iterates['x']),
-                                                             'nf': min(history.dataframe['num_f'].cumsum().iloc[-1], MAX_NF),
-                                                             'np': min(int(history.dataframe.iloc[-1]['n_proj']), MAX_NF),
-                                                             'T': history.dataframe['time'].cumsum().iloc[-1],
-                                                             'hist': history.dataframe}
+                                                     'f_x': np.array([prob.f(x) for x in history.iterates['x']]),
+                                                     'x_bar': x_bar, 'f_xbar': prob.f(x_bar),
+                                                     'viol_0': np.linalg.norm(np.maximum(prob.g(x0), 0)),
+                                                     'viol_x': np.array([np.linalg.norm(np.maximum(prob.g(x), 0)) for x in history.iterates['x']]),
+                                                     'viol_xbar': np.linalg.norm(np.maximum(prob.g(x_bar), 0)),
+                                                     'n_it': len(history.iterates['x']),
+                                                     'nf': min(history.dataframe['num_f'].cumsum().iloc[-1], MAX_NF),
+                                                     'np': min(int(history.dataframe.iloc[-1]['n_proj']), MAX_NF),
+                                                     'T': history.dataframe['time'].cumsum().iloc[-1],
+                                                     'hist': history.dataframe}
 
     with open(os.path.join(OUTPUT_PATH, 'benchmark_results.pkl'), 'wb') as f:
         pickle.dump(results, f)
