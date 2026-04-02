@@ -9,20 +9,24 @@
 
 Implementation of the FSP framework proposed in 
 
-[Jia, X., Lapucci, M. & Mansueto, P., Projection-based curve pattern search for black-box optimization over smooth convex sets. arXiv pre-print (2025)](https://doi.org/10.48550/arXiv.2503.20616)
+[Jia, X., Lapucci, M. & Mansueto, P., Projection-based curve pattern search for black-box optimization over smooth convex sets. Optimization Methods and Software (2026)](https://doi.org/10.1080/10556788.2026.2647280)
 
 If you have used our code for research purposes, please cite the publication mentioned above.
 For the sake of simplicity, we provide the Bibtex format:
 
 ```
-@misc{jia2025projectionbasedcurvepatternsearch,
-      title={Projection-based curve pattern search for black-box optimization over smooth convex sets}, 
-      author={Xiaoxi Jia and Matteo Lapucci and Pierluigi Mansueto},
-      year={2025},
-      eprint={2503.20616},
-      archivePrefix={arXiv},
-      primaryClass={math.OC},
-      url={https://arxiv.org/abs/2503.20616}, 
+@article{Jia26032026,
+  author = {Xiaoxi Jia and Matteo Lapucci and Pierluigi Mansueto},
+  title = {Projection-based curve pattern search for black-box optimization over smooth convex sets},
+  journal = {Optimization Methods and Software},
+  volume = {0},
+  number = {0},
+  pages = {1--23},
+  year = {2026},
+  publisher = {Taylor \& Francis},
+  doi = {10.1080/10556788.2026.2647280},
+  URL = {https://doi.org/10.1080/10556788.2026.2647280},
+  eprint = {https://doi.org/10.1080/10556788.2026.2647280}
 }
 ```
 
@@ -47,7 +51,7 @@ Given a terminal (Anaconda Prompt for Windows users), you can run the code using
 
 If you have any question, feel free to contact me:
 
-[Pierluigi Mansueto](https://webgol.dinfo.unifi.it/pierluigi-mansueto/)<br>
+[Pierluigi Mansueto](https://webgol.dinfo.unifi.it/pages/pierluigi_mansueto/)<br>
 Global Optimization Laboratory ([GOL](https://webgol.dinfo.unifi.it/))<br>
 University of Florence<br>
 Email: pierluigi dot mansueto at unifi dot it
